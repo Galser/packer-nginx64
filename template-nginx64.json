@@ -1,7 +1,7 @@
 {
     "variables": {
       "name": "galser/packer-nginx64",
-      "build_name": "ngxin64",
+      "build_name": "nginx64",
       "build_cpu_cores": "2",
       "build_memory": "1024",
       "cpu_cores": "1",
@@ -60,7 +60,8 @@
             "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
             "scripts": [ 
                         "scripts/provision.sh",
-                        "scripts/provision-nginx.sh" 
+                        "scripts/provision-nginx.sh", 
+                        "scripts/provision-tools.sh" 
             ]
         }
       ],    
