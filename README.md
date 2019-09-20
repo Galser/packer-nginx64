@@ -14,6 +14,17 @@ Fore refernce where to get them and how to install please check sections [Requir
 
 # How to use
 
+- To download the copy of the code (*clone* in Git terminology) - go to the location of your choice (normally some place in home folder) and run in terminal:
+```
+git clone https://github.com/Galser/packer-nginx64.git
+```
+ *in case you are using alternative Git Client - please follow appropriate instruction for it and download(*clone*) [this repo](https://github.com/Galser/packer-nginx64.git). *
+
+- Previous step should create the folder that contains copy of repository. Default name is going to be the same as the name of repository e.g. `packer-nginx64`. Locate and open it.
+```
+cd packer-nginx64
+```
+
 # Required tools
 
 1. To download the content of this repository you will need **git command-line tools**(recommended) or **Git UI Client**. To install official command-line Git tools please [find here instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for various operation systems. 
@@ -32,7 +43,7 @@ Fore refernce where to get them and how to install please check sections [Requir
 
 # DONE
 
-- [X] create inital readme
+- [X] create initial readme
 - [x] get required ISO links and checksums
 - [x] create Packer template
 
