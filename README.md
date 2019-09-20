@@ -9,7 +9,7 @@ This repository attempts to have the minimal amount of code that is required to 
 
 # Prerequisites
 
-You will need to have some Git tools, Vagrant, VirtualBox and Packer installed.
+You will need to have above mentioned - Git tools, Vagrant, VirtualBox and Packer installed.
 For reference where to get them and how to install each one - please check section [Required tools](requiredtools) below
 
 # How to use
@@ -51,7 +51,7 @@ For reference where to get them and how to install each one - please check secti
  ```
     ==> box: Box file was not detected as metadata. Adding it directly...
     ==> box: Adding box 'nginx64' (v0) for provider: 
-        box: Unpacking necessary files from: file:///Users/andrii/labs/skills/packer-nginx64/nginx64-vbox.box
+        box: Unpacking necessary files from: file:///.../packer-nginx64/nginx64-vbox.box
     ==> box: Successfully added box 'nginx64' (v0) for 'virtualbox'! 
  ```
  
