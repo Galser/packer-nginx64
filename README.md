@@ -30,30 +30,30 @@ For reference where to get them and how to install please check sections [Requir
  packer template-nginx64.json
  ```
 
-In case of successful process completion you would see these lines :
+ In case of successful process completion you would see these lines :
  ```
  ==> Builds finished. The artifacts of successful builds are:
  --> nginx64-vbox: VM files in directory: output-nginx64-vbox
  --> nginx64-vbox: 'virtualbox' provider box: nginx64-vbox.box
  ```
-Now you should have file `ngxin64-vbox.box` in the current folder. This is you Vagrant box with Nginx installed in Ubuntu Bionic Beaver 64Bit. Congratulations! 
+ Now you should have file `ngxin64-vbox.box` in the current folder. This is you Vagrant box with Nginx installed in Ubuntu  Bionic Beaver 64Bit. Congratulations! 
 
-Further, we going to do some *complimentary steps* to test the box. 
+ Further, we going to do some *complimentary steps* to test the box. 
 
-First we need  to initialize Vagrant with our fresh box, bring it up , check and later destroy to free resources.
+ First we need  to initialize Vagrant with our fresh box, bring it up  , check and later destroy to free resources.
 
 - We need to let know Vagrant about our new box - e.g. add it. 
  ```
  vagrant box add --name nginx64 nginx64-vbox.box
  ```
 
-Output should look like : 
-```
+ Output should look like : 
+ ```
     ==> box: Box file was not detected as metadata. Adding it directly...
     ==> box: Adding box 'nginx64' (v0) for provider: 
         box: Unpacking necessary files from: file:///Users/andrii/labs/skills/packer-nginx64/nginx64-vbox.box
     ==> box: Successfully added box 'nginx64' (v0) for 'virtualbox'! 
-```
+ ```
  
 - Now we can initialize our Vagrant environment. This will create **Vagrantfile** in the current folder with all the required settings to run this base box. 
  ```
@@ -70,16 +70,16 @@ Output should look like :
  ```
  vagrant ssh
  ```
-
-You should see Basic Ubuntu greeting at first line , something like this : 
+ You should see Basic Ubuntu greeting at first line , something like this : 
  ```
  Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-55-generic x86_64)
  ```
 
-Let's check that Nginx indeed running  - at first we can check with the systemd init system to make sure the service is running by typing:
+- Let's check that Nginx indeed running  - at first we can check with the systemd init system to make sure the service is  running by typing:
  ```
  systemctl status nginx
  ```
+ Output :
  ```
  ● nginx.service - A high performance web server and a reverse proxy server
     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
@@ -93,12 +93,12 @@ Let's check that Nginx indeed running  - at first we can check with the systemd 
             ├─413 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
             └─419 nginx: worker proces
  ```
-As you can see above, the service appears to have started successfully. However, the real way to test is to actually request a page from Nginx.
-Let's do it by getting the actual page served by Nginx on localhost :
+ As you can see above, the service appears to have started successfully. However, the real way to test is to actually request a page from Nginx.
+ Let's do it by getting the actual page served by Nginx on localhost :
  ```
  curl http://localhost:80
  ```
-And the start of output will be :
+ And the start of output will be :
  ```
  <!DOCTYPE html>
  <html>
@@ -117,22 +117,22 @@ And the start of output will be :
  <p>If you see this page, the nginx web server is successfully installed and
  working. Further configuration is required.</p>
  ```
-This is it - Nginx is up, running and serving pages, in this case - Nginx default Welcome page
+ So - Nginx is up, running and serving pages, in this case - Nginx default Welcome page
 
 - When you've done with the tests and don't need VM anymore - you should exit the SSH session - by executing in command line :
- ```
- exit
- ```
+  ```
+  exit
+  ```
 
 - Now - to completely destroy the VM and free up all your system resource (CPU, memory)  - execute from command line :
- ```
- vagrant destroy
- ``` 
- Next you should see the question on a new line :
- ```
- default: Are you sure you want to destroy the 'default' VM? [y/N]
- ```
- Answer `y` from keyboard, and you are good to go
+  ```
+  vagrant destroy
+  ``` 
+  Next you should see the question on a new line :
+  ```
+  default: Are you sure you want to destroy the 'default' VM? [y/N]
+  ```
+  Answer `y` from keyboard, and you are good to go
 
 # Required tools
 
@@ -144,7 +144,6 @@ This is it - Nginx is up, running and serving pages, in this case - Nginx defaul
 
 # TODO
 
-- [ ] update readme with last-minute instructions
 
 # DONE
 
@@ -155,3 +154,4 @@ This is it - Nginx is up, running and serving pages, in this case - Nginx defaul
 - [x] make separate install script for Nginx
 - [x] create Vagrant template to run the box
 - [x] test box
+- [x] update readme with last-minute instructions
