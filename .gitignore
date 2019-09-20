@@ -1,0 +1,5 @@
+.vagrant
+packer_cache
+output-nginx64-vbox
+nginx64.box
+Vagrantfile
