@@ -120,9 +120,9 @@ For reference where to get them and how to install please check sections [Requir
  So - Nginx is up, running and serving pages, in this case - Nginx default Welcome page
 
 - When you've done with the tests and don't need VM anymore - you should exit the SSH session - by executing in command line :
-  ```
-  exit
-  ```
+ ```
+ exit
+ ```
 
 - Now - to completely destroy the VM and free up all your system resource (CPU, memory)  - execute from command line :
   ```
