@@ -24,8 +24,6 @@ Fore refernce where to get them and how to install please check sections [Requir
 
 # TODO
 
-- [ ] get required ISO links and checksums    
-- [ ] create Packer template
 - [ ] build first box
 - [ ] make separate install script for Nginx
 - [ ] create Vagrant template to run the box
@@ -35,4 +33,6 @@ Fore refernce where to get them and how to install please check sections [Requir
 # DONE
 
 - [X] create inital readme
+- [x] get required ISO links and checksums
+- [x] create Packer template
 
