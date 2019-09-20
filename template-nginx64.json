@@ -56,9 +56,12 @@
     ],
     "provisioners": [
         {
-          "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
-          "script": "scripts/provision.sh",
-          "type": "shell"
+            "type": "shell",
+            "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+            "scripts": [ 
+                        "scripts/provision.sh",
+                        "scripts/provision-nginx.sh" 
+            ]
         }
       ],    
     "post-processors": [
