@@ -5,12 +5,12 @@ Vagrant VirtualBox box with Nginx64
 
 # Purpose 
 
-This repository attempts to have the minimal amount of code that is required to create an Ubuntu Bionic Beaver 64it box with Nginx64 installed, using Packer for running in VirtualBox with management by Vagrant.
+This repository attempts to have the minimal amount of code that is required to create an [Ubuntu Bionic Beaver 64it](http://releases.ubuntu.com/18.04/) box with [Nginx64](https://www.nginx.com/) installed, using [Packer](https://www.packer.io/intro/index.html) for running in [VirtualBox](https://www.virtualbox.org/) with management by [Vagrant](https://www.vagrantup.com/). To learn more about the mentioned tools -  please check section [Required tools near the end of the README](requiredtools)
 
 # Prerequisites
 
 You will need to have some Git tools, Vagrant, VirtualBox and Packer installed.
-For reference where to get them and how to install please check sections [Required tools](requiredtools) below
+For reference where to get them and how to install each one - please check section [Required tools](requiredtools) below
 
 # How to use
 
@@ -136,10 +136,12 @@ For reference where to get them and how to install please check sections [Requir
 
 # Required tools
 
-1. To download the content of this repository you will need **git command-line tools**(recommended) or **Git UI Client**. To install official command-line Git tools please [find here instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for various operating systems. 
-2. This box for virtualization uses **VirtualBox**, download the binaries for your [platform here](https://www.virtualbox.org/wiki/Downloads) and then follow [instructions for installation](https://www.virtualbox.org/manual/ch02.html)
-3. For managing of VM (virtual machines), we are going to use **Vagrant**. To install **Vagrant** , please follow instructions here : [official Vargant installation manual](https://www.vagrantup.com/docs/installation/)
-4. For creating base box image from scratch we need **Packer** - an open-source tool for creating identical machine images for multiple platforms from a single source configuration.  You can [download binaries for your platform here](https://www.packer.io/downloads.html)  and then [follow this installation instruction](https://www.packer.io/intro/getting-started/install.html#precompiled-binaries).  In our case Packer is going to take care of installing OS into VM, communicating with it, doing basic provision and preparing for us packed Vagrant box, ready to use.
+1. **To download the content of this repository** you will need **git command-line tools**(recommended) or **Git UI Client**. To install official command-line Git tools please [find here instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for various operating systems. 
+2. **This box for virtualization** uses **VirtualBox**, download the binaries for your [platform here](https://www.virtualbox.org/wiki/Downloads) and then follow [instructions for installation](https://www.virtualbox.org/manual/ch02.html)
+3. **For managing VM** (virtual machines), we are going to use **Vagrant**. To install **Vagrant** , please follow instructions here : [official Vargant installation manual](https://www.vagrantup.com/docs/installation/)
+4. **For creating base box image** from scratch we need **Packer** - an open-source tool for creating identical machine images for multiple platforms from a single source configuration.  You can [download binaries for your platform here](https://www.packer.io/downloads.html)  and then [follow this installation instruction](https://www.packer.io/intro/getting-started/install.html#precompiled-binaries).  In our case Packer is going to take care of installing OS into VM, communicating with it, doing basic provision and preparing for us packed Vagrant box, ready to use.
+
+5. **Nginx stands apart - as it will be downloaded and installed automatically during the provision.** Nginx is an open source HTTP Web server and reverse proxy server.In addition to offering HTTP server capabilities, Nginx can also operate as an IMAP/POP3 mail proxy server as well as function as a load balancer and HTTP cache server. You can get more information about it check [offical website here](https://www.nginx.com)  
 
 
 # TODO
