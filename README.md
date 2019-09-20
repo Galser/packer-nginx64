@@ -1,15 +1,15 @@
 # packer-nginx64
 Vagrant VirtualBox box with Nginx64
 
-*Based on : https://github.com/Galser/packer-ubuntu*
+*Based on https://github.com/Galser/packer-ubuntu*
 
 # Purpose 
 
-This repository attempts to have minimal amount of code that is required to create an Ubuntu Bionic Beaver 64it box  with Nginx64 installed, using Packer for running in VirtualBox with management by Vagrant.
+This repository attempts to have the minimal amount of code that is required to create an Ubuntu Bionic Beaver 64it box with Nginx64 installed, using Packer for running in VirtualBox with management by Vagrant.
 
 # Prerequisites
 
-You will need to have some Git tools , Vagrant, VirtualBox and Packer installed.
+You will need to have some Git tools, Vagrant, VirtualBox and Packer installed.
 For reference where to get them and how to install please check sections [Required tools](requiredtools) below
 
 # How to use
@@ -20,12 +20,12 @@ For reference where to get them and how to install please check sections [Requir
  ```
  *in case you are using alternative Git Client - please follow appropriate instruction for it and download(*clone*) [this repo](https://github.com/Galser/packer-nginx64.git).*
 
-- Previous step should create the folder that contains copy of repository. Default name is going to be the same as the name of repository e.g. `packer-nginx64`. Locate and open it.
+- Previous step should create the folder that contains a copy of repository. The default name is going to be the same as the name of repository e.g. `packer-nginx64`. Locate and open it.
  ```
  cd packer-nginx64
  ```
 - Now to create the Vagrant base box we are going to use Packer and [template](templates.json) with [provision scripts](scripts) provided in this repo.
-*Note: It is going to take some time, as Packer need to download the full ISO image of the operating system, run it, make installation and all required adjustments and then pack everything into format suitable for consuming by Vagrant running with VirtualBox*
+*Note: It is going to take some time, as Packer need to download the full ISO image of the operating system, run it, make installation and all required adjustments and then pack everything into a format suitable for consuming by Vagrant running with VirtualBox*
  ```
  packer template-nginx64.json
  ```
@@ -40,14 +40,14 @@ For reference where to get them and how to install please check sections [Requir
 
  Further, we going to do some *complimentary steps* to test the box. 
 
- First we need  to initialize Vagrant with our fresh box, bring it up  , check and later destroy to free resources.
+ First, we need to initialize Vagrant with our fresh box, bring it up, check and later destroy to free resources.
 
 - We need to let know Vagrant about our new box - e.g. add it. 
  ```
  vagrant box add --name nginx64 nginx64-vbox.box
  ```
 
- Output should look like : 
+ The output should look like : 
  ```
     ==> box: Box file was not detected as metadata. Adding it directly...
     ==> box: Adding box 'nginx64' (v0) for provider: 
@@ -60,17 +60,17 @@ For reference where to get them and how to install please check sections [Requir
  vagrant init nginx64
  ```
  
-- To create and provision virtual machine with Vagrant - execute from command line :
+- To create and provision a virtual machine with Vagrant - execute from the command line :
  ```
  vagrant up
  ```
- ( *This will utilize settings from previous step - from Vagrantfile* )
+ ( *This will utilize settings from the previous step - from Vagrantfile* )
 
-- At this point VM already up and running , so you can use SSH client to connect to it. For example for Linux and MacOS - execute from command-line : 
+- At this point VM already up and running, so you can use SSH client to connect to it. For example for Linux and macOS - execute from command-line : 
  ```
  vagrant ssh
  ```
- You should see Basic Ubuntu greeting at first line , something like this : 
+ You should see Basic Ubuntu greeting at first line, something like this : 
  ```
  Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-55-generic x86_64)
  ```
@@ -93,7 +93,7 @@ For reference where to get them and how to install please check sections [Requir
             ├─413 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
             └─419 nginx: worker proces
  ```
- As you can see above, the service appears to have started successfully. However, the real way to test is to actually request a page from Nginx.
+ As you can see above, the service appears to have started successfully. However, the real way to test is to request a page from Nginx.
  Let's do it by getting the actual page served by Nginx on localhost :
  ```
  curl http://localhost:80
@@ -119,27 +119,27 @@ For reference where to get them and how to install please check sections [Requir
  ```
  So - Nginx is up, running and serving pages, in this case - Nginx default Welcome page
 
-- When you've done with the tests and don't need VM anymore - you should exit the SSH session - by executing in command line :
+- When you've done with the tests and don't need VM anymore - you should exit the SSH session - by executing in the command line :
  ```
  exit
  ```
 
-- Now - to completely destroy the VM and free up all your system resource (CPU, memory)  - execute from command line :
+- Now - to completely destroy the VM and free up all your system resource (CPU, memory)  - execute from the command line :
   ```
   vagrant destroy
   ``` 
-  Next you should see the question on a new line :
+  Next, you should see the question on a new line :
   ```
   default: Are you sure you want to destroy the 'default' VM? [y/N]
   ```
-  Answer `y` from keyboard, and you are good to go
+  Answer `y` from the keyboard, and you are good to go
 
 # Required tools
 
-1. To download the content of this repository you will need **git command-line tools**(recommended) or **Git UI Client**. To install official command-line Git tools please [find here instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for various operation systems. 
-2. This box for virtualizaion uses **VirtualBox**, download the binaries for your [platform here](https://www.virtualbox.org/wiki/Downloads) and then follow [instructions for installation](https://www.virtualbox.org/manual/ch02.html)
-3. For managing of VM (virtual machines) we are going to use **Vagrant**. To install **Vagrant** , please follow instructions here : [official Vargant installation manual](https://www.vagrantup.com/docs/installation/)
-4. For creating base box image from scratch we need **Packer** - an open source tool for creating identical machine images for multiple platforms from a single source configuration.  You can [download binaries for your platform here](https://www.packer.io/downloads.html)  and then [follow this installation instruction](https://www.packer.io/intro/getting-started/install.html#precompiled-binaries).  In our case Packer is going to take care of installing OS into VM, communicating with it, doing basic provision and preparing for us packed Vagrant box, ready to use.
+1. To download the content of this repository you will need **git command-line tools**(recommended) or **Git UI Client**. To install official command-line Git tools please [find here instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for various operating systems. 
+2. This box for virtualization uses **VirtualBox**, download the binaries for your [platform here](https://www.virtualbox.org/wiki/Downloads) and then follow [instructions for installation](https://www.virtualbox.org/manual/ch02.html)
+3. For managing of VM (virtual machines), we are going to use **Vagrant**. To install **Vagrant** , please follow instructions here : [official Vargant installation manual](https://www.vagrantup.com/docs/installation/)
+4. For creating base box image from scratch we need **Packer** - an open-source tool for creating identical machine images for multiple platforms from a single source configuration.  You can [download binaries for your platform here](https://www.packer.io/downloads.html)  and then [follow this installation instruction](https://www.packer.io/intro/getting-started/install.html#precompiled-binaries).  In our case Packer is going to take care of installing OS into VM, communicating with it, doing basic provision and preparing for us packed Vagrant box, ready to use.
 
 
 # TODO
@@ -147,10 +147,10 @@ For reference where to get them and how to install please check sections [Requir
 
 # DONE
 
-- [X] create initial readme
+- [X] create an initial readme
 - [x] get required ISO links and checksums
 - [x] create Packer template
-- [X] build first box
+- [X] build the first box
 - [x] make separate install script for Nginx
 - [x] create Vagrant template to run the box
 - [x] test box
