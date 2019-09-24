@@ -5,12 +5,12 @@ Vagrant VirtualBox box with Nginx64
 
 # Purpose 
 
-This repository attempts to have the minimal amount of code that is required to create an [Ubuntu Bionic Beaver 64it](http://releases.ubuntu.com/18.04/) box with [Nginx64](https://www.nginx.com/) installed, using [Packer](https://www.packer.io/intro/index.html) for running in [VirtualBox](https://www.virtualbox.org/) with management by [Vagrant](https://www.vagrantup.com/). To learn more about the mentioned tools -  please check section [Required tools near the end of the README](#requiredtools)
+This repository attempts to have the minimal amount of code that is required to create an [Ubuntu Bionic Beaver 64it](http://releases.ubuntu.com/18.04/) box with [Nginx64](https://www.nginx.com/) installed, using [Packer](https://www.packer.io/intro/index.html) for running in [VirtualBox](https://www.virtualbox.org/) with management by [Vagrant](https://www.vagrantup.com/). To learn more about the mentioned tools -  please check section [Technologies near the end of the README](#technologies)
 
 # Prerequisites
 
 You will need to have above mentioned - Git tools, Vagrant, VirtualBox and Packer installed.
-For reference where to get them and how to install each one - please check section [Required tools](#requiredtools) below
+For reference where to get them and how to install each one - please check section [Technologies](#technologies) below
 
 # How to use
 
@@ -134,7 +134,7 @@ For reference where to get them and how to install each one - please check secti
   ```
   Answer `y` from the keyboard, and you are good to go
 
-# Required tools
+# Technologies
 
 1. **To download the content of this repository** you will need **git command-line tools**(recommended) or **Git UI Client**. To install official command-line Git tools please [find here instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) for various operating systems. 
 2. **This box for virtualization** uses **VirtualBox**, download the binaries for your [platform here](https://www.virtualbox.org/wiki/Downloads) and then follow [instructions for installation](https://www.virtualbox.org/manual/ch02.html)
