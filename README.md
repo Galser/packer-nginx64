@@ -24,7 +24,7 @@ For reference where to get them and how to install each one - please check secti
  ```
  cd packer-nginx64
  ```
-- Now to create the Vagrant base box we are going to use Packer and [template](templates.json) with [provision scripts](scripts) provided in this repo.
+- Now to create the Vagrant base box we are going to use Packer and [template](template-nginx64.json) with [provision scripts](scripts) provided in this repo.
 *Note: It is going to take some time, as Packer need to download the full ISO image of the operating system, run it, make installation and all required adjustments and then pack everything into a format suitable for consuming by Vagrant running with VirtualBox*
  ```
  packer build template-nginx64.json
